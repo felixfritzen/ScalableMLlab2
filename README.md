@@ -27,18 +27,13 @@
 ### README.md Requirements
 Describe ways to improve model performance using:
 - **Model-Centric Approaches:** 
-  - Tune hyperparameters (e.g., rank for LoRA adapters, learning rate, decay).
-  - Use a LoRA adapter for fine-tuning due to efficiency. For example:
-    - Fully connected layer: 1M parameters (1000x1000 matrix).
-    - LoRA adapter (rank 8): 16K parameters, reducing computation by 500x.
+  We are using a LoRA adapter to finetune the model because it is cheaper than a fc layer. A fc layer would be represented by a 1000x1000 matrix therefore = 1M parameters, however a LoRA adapter of rank 8 would be represented by two matrices 1000x8 and 8x1000 therefore 16K parameters and 500 times less than fc layer. Note that the product is still [1000x8] @[8x1000]=[1000,1000]. Therefore the most impactful hyperparameter is this bottleneck, the rank which is 8 in  this case. Therefore we will do a hyperparameter search of the rank in powers of 2, e.g 8,16,32,64. We will do a grid here, we could also do a search of the learning rate and decay, here we would do a random search and not a grid. However due to the limited scope we choose to just do the hyperparameter search of the rank.
 
-  **Approach:**
+  **Chosen approach:**
   - Perform a hyperparameter grid search for rank values (e.g., 8, 16, 32, 64).
-  - Use random search for learning rate and decay.
 
 - **Data-Centric Approaches:**
-  - Use a larger dataset for training. The given dataset is a subset of a larger dataset.
-  - Prioritize high-quality data to avoid degradation in performance.
+  More data can have a large impact, the dataset given in the task is a subset of a 10 times larger dataset that could be used. However, more data means  more computation and more time. However quality is also important, using large amount of low quality data can be worse than low amount of good data. We could have some function that looks at the data before training and removes low quality.
 
 **Base Model:**
 Llama-3.2-3B-Instruct was chosen for final deployment based on evaluation loss.
