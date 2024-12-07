@@ -1,5 +1,11 @@
 # Lab 2: Scalable Machine Learning
 
+**Implementation:**
+- **Training Notebook:** `FelixValter_Llama_3_2_1B+3B_Conversational_+_2x_faster_finetuning.ipynb`
+- **UI Script:** `app.py`
+
+---
+
 ## Task 1: Fine-Tune a Pre-Trained Large Language Model and Build a Serverless UI
 
 ### First Steps
