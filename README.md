@@ -21,6 +21,7 @@
 - Deployed UI: [Hugging Face Space](https://huggingface.co/spaces/felixfritzen/ScalableMLlab2)
 ![Description of the image](pages.png)
 ---
+![Description of the image](demo.png)
 
 ## Task 2: Improve Model Performance and Fine-Tune Multiple LLMs
 
