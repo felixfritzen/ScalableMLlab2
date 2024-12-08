@@ -154,6 +154,7 @@ As we can see there is no notable difference, nevertheless we decide to go with 
 ### Performance of the final model on the validation set
 We show the performance of the model with r=32 and Llama-3.2-3B-Instruct below. The validation loss is plotted every 500 step during the training process. In total we trained the model for 13500 steps or 1.35 epochs.
 
+![Description of the image](final_validation.png)
 
 
 
