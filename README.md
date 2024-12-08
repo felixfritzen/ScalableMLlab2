@@ -156,7 +156,7 @@ We show the performance of the model with r=32 and Llama-3.2-3B-Instruct below. 
 
 ![Description of the image](final_validation.png)
 
-Interestingely, we note that the validation loss starts to increase after 10000 steps. To mitigate this one could implement early stopping after 10000 stops which means that we stop training the model here.
+Interestingely, we note that the validation loss starts to increase after 10000 steps. To mitigate this one could implement early stopping after 10000 steps which means that we stop training the model here.
 
 
 
